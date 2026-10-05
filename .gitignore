@@ -1,0 +1,30 @@
+# --- Secrets: never commit these ---
+.env
+*.key
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# --- Data: too large for git, and regenerable ---
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# --- Trained models: regenerable from code ---
+models/*.pkl
+models/*.joblib
+
+# --- Notebook clutter ---
+.ipynb_checkpoints/
+
+# --- OS / editor ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Personal data ---
+say_expenses_*.csv

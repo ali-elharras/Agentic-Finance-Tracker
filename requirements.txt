@@ -1,0 +1,33 @@
+# Core data handling
+pandas==3.0.5
+numpy==2.5.1
+
+# Machine learning (Random Forest, Isolation Forest)
+scikit-learn==1.9.0
+
+# Synthetic transaction generation
+faker==40.36.0
+
+# Charts
+matplotlib==3.11.1
+
+# LLM layer (Google AI Studio, free tier)
+google-genai==2.16.0
+python-dotenv==1.2.2
+
+# Jupyter notebook support (development only)
+ipykernel==7.3.0
+
+# Optional: only needed to download the Kaggle dataset via API rather than
+# downloading creditcard.csv manually into data/raw/
+kagglehub==1.0.2
+
+# Chatbot interface
+streamlit==1.61.0
+
+# Pinned deliberately. Streamlit 1.61.0 subclasses starlette's GZipResponder and
+# calls it as (app, minimum_size, compresslevel). starlette 1.4.0 added a
+# required keyword-only `thread_minimum_size` argument, so every page request
+# dies with a 500 while /_stcore/health still returns "ok" -- the health check
+# skips that middleware. Do not upgrade starlette until Streamlit catches up.
+starlette==1.3.1
